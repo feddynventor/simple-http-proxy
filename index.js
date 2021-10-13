@@ -5,13 +5,14 @@ var app = express()
 
 app.use(cors())
 
-const port = 3000
+const port = process.argv[2]
+const endpoint = process.argv[3]
 
 app.get('*', (req, res) => {
     
-    request('https://www.lefrecce.it/msite/api/'+req.originalUrl, function (error, response, body) {
+    request(endpoint+req.originalUrl, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            // console.log(body)
+            console.log(new Date().toISOString(),endpoint+req.originalUrl)
             res.send(body)
         }
     })
