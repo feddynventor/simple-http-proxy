@@ -1,7 +1,7 @@
 # Simple HTTP Proxy
 This proxy is based on a HTTP Server and HTTP client, **no fancy proxy mechanisms** are implemented
 
-Simply every request sent to this server is redirected to a secondary endpoint with the same URI
+Simply every request sent to this server is redirected to the specified endpoint just making requests to it, creating a brand new HTTP request with the same parameters and URI 
 
 ## What it supports
 - **COOKIEs Session Storage**
